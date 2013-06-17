@@ -29,16 +29,16 @@ On top of that, if you're using asset pipeline, you may have noticed that the ma
 
 If you're using the asset pipeline with Rails 3.1+,
 
-- Start by removing `//= require jquery`, `//= require jquery-ujs`, and other includes where applicable from your `application.js` file.
+- Start by removing `//= require jquery` and other includes where applicable from your `application.js` file.
 
 If you're using the asset pipeline with Rails 4+,
 
 - Create a vendor directory `mkdir vendor/assets/javascripts/` for each library you would like to include, or only if you see fit
 - Download the version of the library you want to use from the [cdnjs.com](http://cdnjs.com/) and save the file to this directory. The file should look something like `jquery.min.js`.
-- Verify you have removed jquery-rails gem, it is not needed.  Only include this gem reference.:
+- Add the gem to your gem file:
 
 ```ruby
-# gem 'jquery-rails'
+gem 'jquery-rails'
 gem 'cdnjs-rails'
 ```
 
