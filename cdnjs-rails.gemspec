@@ -3,16 +3,16 @@ Gem::Specification.new do |s|
 
   s.authors           = ["Chris Hough"]
   s.email             = ["founders@noconformity.com"]
-  s.description       = %q{Use the Google CDN to serve jquery and fall back to the local version if the CDN is unreachable.}
-  s.summary           = %q{A gem to serve jQuery from the Google CDN with fall back protection.}
-  s.homepage          = "https://github.com/chrishough/jquery-rails-google-cdn"
+  s.description       = %q{Use the CDNJS CDN to serve files and fall back to the local version if the CDN is unreachable.}
+  s.summary           = %q{A gem to serve CDNJS files with fall back protection.}
+  s.homepage          = "https://github.com/chrishough/cdnjs-rails"
 
   s.files             = `git ls-files`.split("\n")
   s.require_paths     = ["lib"]
 
-  s.name              = "jquery-rails-google-cdn"
+  s.name              = "cdnjs-rails"
   s.licenses          = "GPL"
-  s.version           = '0.0.5'
+  s.version           = '0.0.1'
 
 end
 
