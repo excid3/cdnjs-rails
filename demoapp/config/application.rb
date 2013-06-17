@@ -26,7 +26,10 @@ module Demoapp
     # config.i18n.default_locale = :de
 
     # Specify CDJS Libraries to include in the header with fallback
-    config.cdnjs = ""
+    config.cdnjs = {
+        'jquery' => {'cdnjs' => 'jquery/2.0.2/jquery.min.js', 'localpath' => 'jquery/jquery.min.js'}
+    }
     
+
   end
 end
