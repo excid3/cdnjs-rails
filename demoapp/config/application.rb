@@ -25,10 +25,11 @@ module Demoapp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    # Specify CDJS Libraries to include in the header with fallback
-    config.cdnjs = {
-        'jquery' => {'cdnjs' => 'jquery/2.0.2/jquery.min.js', 'localpath' => 'jquery/jquery.min.js'}
-    }
+    # Specify CDNJS Libraries to include in the header with fallback using an array of hashes
+    config.cdnjs = [
+      {'cdnjs' => 'jquery/2.0.2/jquery.min.js', 'localpath' => 'jquery/jquery.min.js'},
+      {'cdnjs' => 'jqueryui/1.10.3/jquery-ui.min.js','localpath' => 'jquery/jquery-ui.min.js'}
+    ]
     
 
   end
