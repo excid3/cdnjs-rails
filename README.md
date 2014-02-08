@@ -47,8 +47,8 @@ gem 'cdnjs-rails'
 ```ruby
 # Specify CDNJS Libraries to include in the header with fallback using an array of hashes
 config.cdnjs = [
-  {'cdnjs' => 'jquery/2.0.2/jquery.min.js', 'localpath' => 'jquery/jquery.min.js'},
-  {'cdnjs' => 'jqueryui/1.10.3/jquery-ui.min.js','localpath' => 'jquery/jquery-ui.min.js'}
+  {'cdnjs' => 'jquery/2.0.2/jquery.min.js', 'localpath' => 'jquery.min.js'},
+  {'cdnjs' => 'jqueryui/1.10.3/jquery-ui.min.js','localpath' => 'jquery-ui.min.js'}
 ]
 ```
 
@@ -86,13 +86,13 @@ The gem will generate the following across all modes production, testing, and de
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <script>
 //<![CDATA[
-window.jQuery || document.write(unescape('%3Cscript src="/assets/jquery/jquery.min.js?body=1">%3C/script>'))
+window.jQuery || document.write(unescape('%3Cscript src="/assets/jquery.min.js?body=1">%3C/script>'))
 //]]>
 </script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script>
 //<![CDATA[
-window.jQuery || document.write(unescape('%3Cscript src="/assets/jquery/jquery-ui.min.js?body=1">%3C/script>'))
+window.jQuery || document.write(unescape('%3Cscript src="/assets/jquery-ui.min.js?body=1">%3C/script>'))
 //]]>
 </script>
 ```

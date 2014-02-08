@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.name              = "cdnjs-rails"
   s.licenses          = "GPL"
-  s.version           = '0.0.1'
+  s.version           = '1.0.0'
 
 end
 
