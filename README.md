@@ -42,21 +42,21 @@ gem 'jquery-rails'
 gem 'cdnjs-rails'
 ```
 
-- In the supplied demo app, we are including 2 libraries `jquery` and `jquery-ui` where `cdnjs` is the name of the partial path on [cdnjs.com](http://cdnjs.com/) and `localpath` matches the folder path in your local application i.e. vendor directory:
+- In the supplied demo app, we are including 2 libraries `jquery` and `jquery-ui` where `cdnjs` is the name of the partial path on [cdnjs.com](http://cdnjs.com/) and `localpath` matches the folder path in your local application i.e. vendor directory. Add this to your `config/application.rb` file so that it is loaded in all environments:
 
 ```ruby
 # Specify CDNJS Libraries to include in the header with fallback using an array of hashes
 config.cdnjs = [
-  {'cdnjs' => 'jquery/2.0.2/jquery.min.js', 'localpath' => 'jquery.min.js'},
-  {'cdnjs' => 'jqueryui/1.10.3/jquery-ui.min.js','localpath' => 'jquery-ui.min.js'}
+  {:cdnjs => 'jquery/2.0.2/jquery.min.js', :localpath => 'jquery.min.js'},
+  {:cdnjs => 'jqueryui/1.10.3/jquery-ui.min.js', :localpath => 'jquery-ui.min.js'}
 ]
 ```
 
 - Finally add this section to your layouts file.
 
 ```html
-<%= cdnjs_include_tag Rails.application.config.cdnjs %>
-<%= javascript_include_tag "application" %>
+<%= cdnjs_include_tag %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 ```
 
 - Please verify you do not have a duplicate `application` js include as this can cause issues with libraries down the road like ember. Here is an example layout of a rails 4 application:
@@ -66,10 +66,9 @@ config.cdnjs = [
 <html>
 <head>
   <title>Demoapp</title>
-  <%= cdnjs_include_tag Rails.application.config.cdnjs %>
-  <%= javascript_include_tag "application" %>
+  <%= cdnjs_include_tag %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
