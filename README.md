@@ -96,13 +96,3 @@ window.jQuery || document.write(unescape('%3Cscript src="/assets/jquery-ui.min.j
 //]]>
 </script>
 ```
-
-=============
-
-###Changelog
-
-
-
-###Changelog
-
-* v0.0.1: Initial release
