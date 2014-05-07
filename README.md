@@ -66,14 +66,14 @@ config.cdnjs = [
 
 - Finally add this section to your layouts file.
 
-```html
+```erb
 <%= cdnjs_include_tag %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 ```
 
 - Please verify you do not have a duplicate `application` js include as this can cause issues with libraries down the road like ember. Here is an example layout of a rails 4 application:
 
-```html
+```erb
 <!DOCTYPE html>
 <html>
 <head>
