@@ -47,9 +47,21 @@ gem 'cdnjs-rails'
 ```ruby
 # Specify CDNJS Libraries to include in the header with fallback using an array of hashes
 config.cdnjs = [
-  {:cdnjs => 'jquery/2.0.2/jquery.min.js', :localpath => 'jquery.min.js'},
+  {:cdnjs => 'jquery/2.0.2/jquery.min.js', :localpath => 'jquery.js'},
   {:cdnjs => 'jqueryui/1.10.3/jquery-ui.min.js', :localpath => 'jquery-ui.min.js'}
 ]
+```
+
+- Remove `//= jquery` from your `application.js` file so that jQuery
+  does not get compiled into your application.js. Also do this for other
+  cdnjs libraries you want that may be in here like `//= jquery-ui.min`
+
+- Add the following to your `config/environments/production.rb` file.
+  The filenames should match the local filenames for your javascript
+  libraries.
+
+```ruby
+  config.assets.precompile += %w( jquery.js jquery-ui.min.js )
 ```
 
 - Finally add this section to your layouts file.
